@@ -1,5 +1,6 @@
 # EICrecon-docs
-_______________________________________________
+
+
 # EICrecon
 JANA based reconstruction for the EPIC detector
 
