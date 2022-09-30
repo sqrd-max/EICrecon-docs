@@ -4,8 +4,7 @@ import React from 'react';
 import rocketseatLogo from '../../../../static/banner.png';
 
 const Logo = () => {
-  //console.warn("here!");
-  return (<img src={rocketseatLogo} alt="Rocketseat logo" style={{ width: 180 }} />);
+    return (<img src={rocketseatLogo} alt="Rocketseat logo" style={{ width: 180 }} />);
 };
 
 export default Logo;

@@ -3,20 +3,29 @@
   link: '/'
 - label: 'Getting started'
   items:
-    - label: 'EIC shell'
+    - label: 'Get started/EIC shell'
       link: '/get-started/eic-shell'
     - label: 'EDPM'
       link: '/get-started/edpm'
     - label: 'Manual Build'
       link: '/get-started/manual-build'
+- label: 'HowTos'
+  items:
     - label: 'Add Factory'
       link: '/howtos/add_factory'
+- label: 'Parts'
+  items:    
     - label: 'CMake'
       link: '/parts/cmake'
     - label: 'Logging'
       link: '/parts/logging'
     - label: 'Tracking'
       link: '/parts/tracking'
+    - label: 'Tracking'
+      link: '/mermaid/mermaid'
+
+
+
 
 #   link: '/getting-started'
 # - label: Usage

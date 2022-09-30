@@ -21,6 +21,7 @@ module.exports = {
         repositoryUrl: `https://github.com/jpedroschmitz/rocketdocs`,
         baseDir: `examples/gatsby-theme-docs`,
       },
+      
     },
     // {
     //   resolve: `gatsby-transformer-remark`,
@@ -36,6 +37,27 @@ module.exports = {
     //     ],
     //   }
     // },
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        gatsbyRemarkPlugins: [
+        {
+          resolve: 'gatsby-remark-mermaid',
+        },
+        {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1035,
+              sizeByPixelDensity: true
+            }
+          },
+          {
+            resolve: 'gatsby-remark-copy-linked-files'
+          }
+        ],
+        extensions: [".mdx", ".md"]
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
