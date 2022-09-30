@@ -1,0 +1,41 @@
+# Sidebar navigation
+- label: 'Introduction'
+  link: '/'
+- label: 'Getting started'
+  items:
+    - label: 'EIC shell'
+      link: '/get-started/eic-shell'
+    - label: 'EDPM'
+      link: '/get-started/edpm'
+    - label: 'Manual Build'
+      link: '/get-started/manual-build'
+    - label: 'Add Factory'
+      link: '/howtos/add_factory'
+    - label: 'CMake'
+      link: '/parts/cmake'
+    - label: 'Logging'
+      link: '/parts/logging'
+    - label: 'Tracking'
+      link: '/parts/tracking'
+
+#   link: '/getting-started'
+# - label: Usage
+#   items:
+#     - label: 'Creating docs'
+#       link: '/usage/creating-docs'
+#     - label: 'Navigation'
+#       link: '/usage/navigation'
+#     - label: 'Shadowing'
+#       link: '/usage/shadowing'
+#     - label: 'Using YAML files'
+#       link: '/usage/using-yaml-files'
+# - label: More
+#   items:
+#     - label: FAQ
+#       link: /faq
+#     - label: 'Github'
+#       link: https://github.com/jpedroschmitz/rocketdocs
+# - label: 'Add Factory'
+#   link: '/HowTo_add_factory'
+# - label: 'Logging'
+#   link: '/Logging'

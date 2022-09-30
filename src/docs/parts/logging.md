@@ -13,7 +13,7 @@ Each unit - a plugin, factory, class, etc. can spawn its own named logger and us
 
 [FULL WORKING EXAMPLE](https://github.com/eic/EICrecon/blob/main/src/examples/log_example/log_example.cc)
 
-```c++
+```cpp
 #include <services/log/Log_service.h>
 class ExampleProcessor: public JEventProcessor {
 private:
