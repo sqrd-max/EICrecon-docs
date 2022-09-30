@@ -7,6 +7,17 @@
       link: '/get-started/eic-shell'
     - label: 'EDPM'
       link: '/get-started/edpm'
+    - label: 'Manual Build'
+      link: '/get-started/manual-build'
+    - label: 'Add Factory'
+      link: '/howtos/add_factory'
+    - label: 'CMake'
+      link: '/parts/cmake'
+    - label: 'Logging'
+      link: '/parts/logging'
+    - label: 'Tracking'
+      link: '/parts/tracking'
+
 #   link: '/getting-started'
 # - label: Usage
 #   items:
