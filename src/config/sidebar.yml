@@ -5,6 +5,8 @@
   items:
     - label: 'EIC shell'
       link: '/get-started/eic-shell'
+    - label: 'EDPM'
+      link: '/get-started/edpm'
 #   link: '/getting-started'
 # - label: Usage
 #   items:
