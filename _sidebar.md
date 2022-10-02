@@ -10,3 +10,4 @@
     * [Cmake](design/cmake.md)
     * [Logging](design/logging.md)
     * [Tracking](design/tracking.md)
+    * [Gaudi Algorithms](design/gaudi-algorithms.md)
