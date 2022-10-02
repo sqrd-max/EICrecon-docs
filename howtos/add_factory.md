@@ -1,8 +1,3 @@
----
-title: HowTo add factory
-description: Learn how to add JANA2 factory
----
-
 # Adding a reconstruction algorithm to EICrecon
 
 _Please note that these instructions may change at any time. There are plans
