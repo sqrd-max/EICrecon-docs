@@ -6,7 +6,8 @@ EICrecon uses [spdlog](https://github.com/gabime/spdlog) library as a logging ba
 (in many cases [is faster than printf and std streams](https://github.com/fmtlib/fmt#speed-tests))
 
 
-### Basic usage
+
+## Basic use
 
 EICRecon has a log service that centralizes default logger configuration and helps spawn named loggers.
 Each unit - a plugin, factory, class, etc. can spawn its own named logger and use it:
@@ -43,10 +44,14 @@ public:
     }
 ```
 
+
+
+## Formatting
+
 Thanks to fmt, logger has rich text formatting. More examples and full
 specification is in [fmt documentation](https://github.com/fmtlib/fmt):
 
-```c++
+```cpp
 m_log->info("Welcome to spdlog!");
 // [info] Welcome to spdlog!
 
@@ -88,9 +93,12 @@ SPDLOG_TRACE("Some trace message with param {}", 42);
 SPDLOG_DEBUG("Some debug message");
 ```
 
+
+## User parameters
+
 In order to wire your logger level with a jana-parameter to change log level without recompilation, use:
 
-```c++
+```cpp
 // includes: 
 #include <services/log/Log_service.h>
 #include <extensions/spdlog/SpdlogExtensions.h>
@@ -115,6 +123,8 @@ void Init() override {
 }
 ```
 
+## Log levels
+
 **How log levels should be used?**
 
 - **trace**    - something very verbose like each hit parameter
@@ -127,7 +137,7 @@ void Init() override {
 Sometimes one needs to know current log level to calculate debugging values. Use **<=** operator to check level.
 It works because enum values are: trace=0, debug=1, ... critical= 5. So:
 
-```c++
+```cpp
   // In general one doesn't need to manually check log debug level
   m_log->debug("Will be printed if level is 'debug' or 'trace' ");
 
@@ -141,27 +151,31 @@ It works because enum values are: trace=0, debug=1, ... critical= 5. So:
   }
 ```
 
-### Logging hints
 
 
-#### Streamable objects
+## Hints
+
+
+
+### Streamable objects
 
 Sometimes you need to print objects with custom overloaded ostr stream operator `<<`
 i.e. objects that knows how to print self when used with something like  ```cout<<object```
 Such objects are used sometimes, e.g. lib eigen matrices might be printed that way.
 To enable printing of such objects include the next header
 
-```c++
+```cpp
 // Include this to print/format streamable objects.
 // You don't need this header most of the time (until you see a compilation error)
 #include <spdlog/fmt/ostr.h>
 ```
 
-#### Default logger
+
+### Default logger
 
 spdlog has a default logger and global functions like `spdlog::info`, `spdlog::warn` etc.
 
-```c++
+```cpp
 spdlog::info("Hello world from default logger! You can do this, but please don't");
 ```
 
@@ -170,14 +184,14 @@ of a named loggers. Default logger is used to highlight something that relates t
 Otherwise, use named logger.
 
 
-#### Shared names
+### Shared names
 
 By default, spdlog fails if a logger with such name exists (but one can get existing logger
 from registry). EICrecon Logger service simplifies and automates it with a single function `logger(name)`.
 This allows to use the same logger with the same name from different units if the context is the same.
 Imagine you want to highlight that this message belongs to "tracking" you can do:
 
-```c++
+```cpp
 
 // One class
 m_tracking_log = m_app->GetService<Log_service>()->logger("tracking");
@@ -188,7 +202,7 @@ m_tracking_log = m_app->GetService<Log_service>()->logger("tracking");
 
 You can mix named loggers depending on context
 
-```c++
+```cpp
 
 // Some class INIT
 m_this_log = m_app->GetService<Log_service>()->logger("ExampleFactoryName");
@@ -199,19 +213,21 @@ m_this_log->trace("Something related to this class/factory/plugin");
 m_tracking_log->info("Something relating to tracking in general");
 ```
 
-#### String format
+
+### String format
 
 It is recommended to use fmt string formatting both from performance and safety points. But it is also very convenient!
 fmt can be accessed through spdlog headers:
 
-```c++
+```cpp
 #include <spdlog/fmt/fmt.h>
 
 // code
 std::string hello = fmt::format("Hello world {}", 42);
 ```
 
-#### CMake
+
+### CMake
 
 spdlog is included by default in every plugin if `plugin_add` macro is used:
 
@@ -222,7 +238,8 @@ plugin_add(${PLUGIN_NAME})  # <= spdlog will be included by default
 eicrecon application also includes Log_service by default. So it should not appear on `-Pplugins` list.
 
 
-### Logging links
+
+## Additional links
 
 - [spdlog](https://github.com/gabime/spdlog)
 - [fmt](https://github.com/fmtlib/fmt)
