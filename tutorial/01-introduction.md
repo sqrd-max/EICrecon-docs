@@ -9,7 +9,7 @@
 In this episode we will introduce EICrecon and show where it fits into the EPIC software stack. We will
 briefly cover the scope of this tutorial and functionality will be covered.
 
-![image Simulated Data Flow](fig/simulated_data_flow.png)
+![image Simulated Data Flow](img/simulated_data_flow.png)
 
-{% include links.md %}
+{% include links.md %}  
 
