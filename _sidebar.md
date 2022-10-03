@@ -11,3 +11,9 @@
     * [Logging](design/logging.md)
     * [Tracking](design/tracking.md)
     * [Gaudi Algorithms](design/gaudi-algorithms.md)
+* Tutorials - jana2 
+    * [Introduction](tutorial/01-introduction.md)
+    * [Work environment](tutorial/02-work-environment.md)
+    * [End user plugin](tutorial/03-end-user-plugin.md)
+    * [Factory](tutorial/04-factory.md)
+    * [Contributing](tutorial/05-contributing.md)
